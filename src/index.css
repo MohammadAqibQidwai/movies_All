@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:wght@300;400&display=swap');
+/* Base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffdd77; /* Light yellow background */
+  font-family: 'Arial', Georgia, 'Times New Roman', Times, serif; /* Change to a more readable font */
+}
+
+.shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.shadowbackdrop {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Larger shadow for more depth */
+}
+
+.img {
+  transition: transform 0.3s ease-in-out; /* Faster transition */
+}
+
+.card:hover .img {
+  transform: scale(1.05); /* Slightly increase scale on hover */
+}
+
+.active {
+  background-color: #ff8c66; /* Light orange background for active elements */
+  color: #13602f; /* Dark text color */
+}
+
+/* Loader */
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #93bcab; /* Orange loader color */
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  animation: animloader 2s ease-in-out infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
